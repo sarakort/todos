@@ -1,11 +1,16 @@
 package info
 
-import "todo/model"
+import "todos/model"
 
 var todo1 = model.Todo{
 	ID:      1,
 	Checked: false,
 	Message: "Homework 1",
 }
-var Count int = 1
-var Todos = []model.Todo{}
+var todo2 = model.Todo{
+	ID:      2,
+	Checked: false,
+	Message: "Homework 1",
+}
+var Count int = 2
+var Todos = []model.Todo{todo1, todo2}
