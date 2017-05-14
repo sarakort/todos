@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"todo/route"
+	"todos/routing"
 
 	"github.com/ant0ine/go-json-rest/rest"
 )
@@ -12,11 +12,11 @@ func main() {
 	api := rest.NewApi()
 	api.Use(rest.DefaultDevStack...)
 	router, err := rest.MakeRouter(
-		rest.Get("/todos", route.GetTodos),
-		rest.Get("/todo/:id", route.GetTodo),
-		rest.Put("/todo/:id", route.PutTodo),
-		rest.Post("/todo", route.PostTodo),
-		rest.Delete("/todo/:id", route.DeleteTodo),
+		rest.Get("/todos", routing.GetTodos),
+		rest.Get("/todo/:id", routing.GetTodoById),
+		rest.Put("/todo/:id", routing.PutTodo),
+		rest.Post("/todo", routing.PostTodo),
+		rest.Delete("/todo/:id", routing.DeleteTodo),
 	)
 	if err != nil {
 		log.Fatal(err.Error())
