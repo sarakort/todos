@@ -13,10 +13,10 @@ func main() {
 	api.Use(rest.DefaultDevStack...)
 	router, err := rest.MakeRouter(
 		rest.Get("/todos", routing.GetTodos),
-		rest.Get("/todo/:id", routing.GetTodoById),
-		rest.Put("/todo/:id", routing.PutTodo),
-		rest.Post("/todo", routing.PostTodo),
-		rest.Delete("/todo/:id", routing.DeleteTodo),
+		rest.Get("/todos/:id", routing.GetTodo),
+		rest.Put("/todos/:id", routing.PutTodo),
+		rest.Post("/todos", routing.PostTodo),
+		rest.Delete("/todos/:id", routing.DeleteTodo),
 	)
 	if err != nil {
 		log.Fatal(err.Error())
