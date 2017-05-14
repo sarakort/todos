@@ -9,7 +9,10 @@ import (
 func TestGetTodoAndExpectingId(t *testing.T) {
 	id := 2
 
-	todo := GetTodoByID(id)
+	todo, err := GetTodoByID(id)
+	if err != nil {
+		t.Error(err.Error())
+	}
 	validateResult(t, id, todo)
 
 }

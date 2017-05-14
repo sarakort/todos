@@ -4,9 +4,7 @@ import "testing"
 
 func TestRemoveTodo(t *testing.T) {
 	id := 2
-	removeTodo(2)
-
-	todo, err := GetTodoByID(2)
+	err := RemoveTodoByID(id)
 	if err != nil {
 		t.Error(err.Error())
 	}
