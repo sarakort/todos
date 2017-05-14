@@ -24,5 +24,9 @@ func CreateNewTodo(todo model.Todo) int {
 	info.Count++
 	todo.ID = info.Count
 	info.Todos = append(info.Todos, todo)
-	return GetTodoByID(todo.ID).ID
+	result, err := GetTodoByID(todo.ID)
+	if err != nil {
+		return 0
+	}
+	return result.ID
 }

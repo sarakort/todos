@@ -1,6 +1,7 @@
 package routing
 
 import (
+	"errors"
 	"net/http"
 	"todos/info"
 	"todos/model"
@@ -16,17 +17,22 @@ func GetTodo(w rest.ResponseWriter, r *rest.Request) {
 		rest.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	w.WriteJson(GetTodoByID(id))
+	todo, err := GetTodoByID(id)
+	if err != nil {
+		rest.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	w.WriteJson(todo)
 }
 
-func GetTodoByID(id int) model.Todo {
+func GetTodoByID(id int) (model.Todo, error) {
 	todo := model.Todo{}
 	for _, v := range info.Todos {
 		if v.ID == id {
 			todo = v
-			break
+			return todo, nil
 		}
 	}
-	return todo
+	return todo, errors.New("Id not found")
 
 }

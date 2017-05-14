@@ -16,7 +16,11 @@ func PutTodo(w rest.ResponseWriter, r *rest.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
-	todo := GetTodoByID(id)
+	todo, err := GetTodoByID(id)
+	if err != nil {
+		rest.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
 	err = r.DecodeJsonPayload(&todo)
 	result := UpdateTodo(id, todo)
 	w.WriteJson(map[string]int{"ID": result.ID})
