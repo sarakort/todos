@@ -10,7 +10,7 @@ var todo1 = model.Todo{
 var todo2 = model.Todo{
 	ID:      2,
 	Checked: false,
-	Message: "Homework 1",
+	Message: "Homework 2",
 }
 var Count int = 2
 var Todos = []model.Todo{todo1, todo2}

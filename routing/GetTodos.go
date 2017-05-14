@@ -8,7 +8,7 @@ import (
 )
 
 func GetTodos(w rest.ResponseWriter, r *rest.Request) {
-	w.WriteJson(GetAllTodos)
+	w.WriteJson(GetAllTodos())
 }
 func GetAllTodos() []model.Todo {
 	return info.Todos
