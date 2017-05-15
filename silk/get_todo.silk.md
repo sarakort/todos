@@ -11,8 +11,8 @@
 * Content-Type: "application/json; charset=utf-8"
 ```json
 {
-  "ID": 1,
-  "Checked": false,
-  "Message": "Homework 1"
+  "id": 1,
+  "checked": true,
+  "message": "Homework 1"
 }
 ```

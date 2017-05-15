@@ -12,14 +12,14 @@
 ```json
 [
   {
-    "ID": 1,
-    "Checked": false,
-    "Message": "Homework 1"
+    "id": 1,
+    "checked": true,
+    "message": "Homework 1"
   },
   {
-    "ID": 2,
-    "Checked": false,
-    "Message": "Homework 2"
+    "id": 2,
+    "checked": false,
+    "message": "Homework 2"
   }
 ]
 ```

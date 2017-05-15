@@ -4,7 +4,7 @@ import "todos/model"
 
 var todo1 = model.Todo{
 	ID:      1,
-	Checked: false,
+	Checked: true,
 	Message: "Homework 1",
 }
 var todo2 = model.Todo{

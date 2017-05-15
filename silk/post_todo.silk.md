@@ -15,4 +15,4 @@
 ### Expected response
 * Status: `201`
 * Content-Type: "application/json; charset=utf-8"
-* Body: /"ID"/
+* Body: /"id"/
