@@ -3,8 +3,8 @@ package routing
 import (
 	"errors"
 	"net/http"
-	"todos/info"
-	"todos/model"
+	"training/todos/info"
+	"training/todos/model"
 
 	"strconv"
 

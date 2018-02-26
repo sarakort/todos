@@ -3,8 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-
-	"todos/handler"
+	"training/todos/handler"
 )
 
 func main() {

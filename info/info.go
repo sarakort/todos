@@ -1,6 +1,6 @@
 package info
 
-import "todos/model"
+import "training/todos/model"
 
 var todo1 = model.Todo{
 	ID:      1,

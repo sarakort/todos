@@ -2,7 +2,7 @@ package handler
 
 import (
 	"log"
-	"todos/routing"
+	"training/todos/routing"
 
 	"github.com/ant0ine/go-json-rest/rest"
 )

@@ -1,8 +1,8 @@
 package routing
 
 import (
-	"todos/info"
-	"todos/model"
+	"training/todos/info"
+	"training/todos/model"
 
 	"github.com/ant0ine/go-json-rest/rest"
 )
