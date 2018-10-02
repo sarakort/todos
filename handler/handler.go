@@ -10,11 +10,18 @@ import (
 func NewApi() *rest.Api {
 	api := rest.NewApi()
 	api.Use(rest.DefaultDevStack...)
+	api.Use(&rest.CorsMiddleware{
+		RejectNonCorsRequests: false,
+		AllowedMethods: []string{"GET", "POST", "PUT" ,"DELETE" },
+		AllowedHeaders: []string{
+			"Accept", "Content-Type", "X-Custom-Header", "Origin"},
+		AccessControlAllowCredentials: true,
+		AccessControlMaxAge:           3600,
+	})
 	router, err := rest.MakeRouter(
 		rest.Get("/todos", routing.GetTodos),
 		rest.Get("/todos/:id", routing.GetTodo),
 		rest.Put("/todos/:id", routing.PutTodo),
-		rest.Patch("todos/:id", routing.PatchTodo),
 		rest.Post("/todos", routing.PostTodo),
 		rest.Delete("/todos/:id", routing.DeleteTodo),
 	)
