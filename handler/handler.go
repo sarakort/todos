@@ -14,6 +14,7 @@ func NewApi() *rest.Api {
 		rest.Get("/todos", routing.GetTodos),
 		rest.Get("/todos/:id", routing.GetTodo),
 		rest.Put("/todos/:id", routing.PutTodo),
+		rest.Patch("todos/:id", routing.PatchTodo),
 		rest.Post("/todos", routing.PostTodo),
 		rest.Delete("/todos/:id", routing.DeleteTodo),
 	)
